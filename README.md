@@ -6,7 +6,7 @@ A longo prazo, o objetivo continua sendo o desenvolvimento de uma IA capaz de to
 
 ## Funcionalidades
 
-- **Login Automatizado:** Utiliza o Selenium para realizar o login automático na plataforma Binomo.
+- **Login Automatizado:** Utiliza o Selenium para realizar o login automático na plataforma Binomo.OBS:Altere o documento config.py com seu proprio user give
 - **Captura de Candles eficiente** diretamente pela API da propria binomo
 - **Análise de Velas:** Processa os dados capturados usando OpenCV para identificar padrões e gerar insights sobre o comportamento do mercado.
 - **IA de Day Trading:** Desenvolve e treina uma IA para tomar decisões de trading baseadas em análises de dados.
