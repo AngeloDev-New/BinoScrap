@@ -19,13 +19,7 @@ Este projeto tem como objetivo desenvolver um sistema de day trading utilizando 
     git clone https://github.com/AngeloDev-New/BinoScrap
     ```
 
-2. Navegue até o diretório do projeto:
-
-    ```bash
-    cd seu-repositorio
-    ```
-
-3. Instale as dependências necessárias:
+2. Instale as dependências necessárias:
 
     ```bash
     pip install -r requirements.txt
