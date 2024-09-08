@@ -9,19 +9,14 @@ Este projeto tem como objetivo desenvolver um sistema de day trading utilizando 
 - **Análise de Velas:** Processa os dados capturados usando OpenCV para identificar padrões e gerar insights sobre o comportamento do mercado.
 - **IA de Day Trading:** Desenvolve e treina uma IA para tomar decisões de trading baseadas em análises de dados.
 
-## Requisitos
 
-- Python 3.x
-- Selenium
-- OpenCV
-- WebDriver para o navegador (ex: ChromeDriver para Google Chrome)
 
 ## Instalação
 
 1. Clone este repositório:
 
     ```bash
-    git clone https://github.com/seu-usuario/seu-repositorio.git
+    git clone https://github.com/AngeloDev-New/BinoScrap
     ```
 
 2. Navegue até o diretório do projeto:
@@ -36,11 +31,4 @@ Este projeto tem como objetivo desenvolver um sistema de day trading utilizando 
     pip install -r requirements.txt
     ```
 
-4. Baixe e coloque o WebDriver no mesmo diretório do seu script ou adicione-o ao PATH do sistema.
 
-## Requisitos Adicionais
-
-O projeto utiliza o OpenCV para processamento de imagem. Você pode instalar o OpenCV com o seguinte comando:
-
-```bash
-pip install opencv-python
