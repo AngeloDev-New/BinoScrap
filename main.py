@@ -12,22 +12,31 @@ EscrevaAqui(XPATH_ATUAL,driver,BINOMO_PASSWORD)                                 
 XPATH_ATUAL = '//*[@id="qa_auth_LoginBtn"]/button'                                                  ##
 CliqueAqui(XPATH_ATUAL,driver)                                                                      ##
 ######################################################################################################
-
+lastCandles = getCandles(100)
 try:
-    for ESCOLHA in analyze(getCandles(100)):
+    for ESCOLHA in analyze(lastCandles):
         match ESCOLHA:
-            case VENDA:
+            case 1:
                 CliqueAqui(XPATH_VENDA,driver)
                 continue
-            case COMPRA:
+            case 2:
                 CliqueAqui(XPATH_COMPRA,driver)
                 continue
-            case INSTABILIDADE:
+            case 3:
                 continue
 finally:
 
 #time.sleep(30)
+    lastCandles.close()
     driver.close()
+
+
+
+
+
+
+#CliqueAqui(XPATH_ATUAL,driver)
+#EscrevaAqui(XPATH_ATUAL,driver,USER)'''
 
 
 
