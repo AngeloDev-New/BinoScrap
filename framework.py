@@ -1,6 +1,4 @@
-VENDA = 1
-COMPRA = 2
-INSTABILIDADE = 3
+
 XPATH_COMPRA = '//*[@id="qa_trading_dealUpButton"]/button/span/div'
 XPATH_VENDA = '//*[@id="qa_trading_dealDownButton"]/button/span/div'
 
@@ -56,11 +54,18 @@ class getCandles(threading.Thread):
         self.start()
 
     def run(self):
-        while True:
+        self.active = True
+        while self.active:
             candle = next(self.lastCandles(1)) 
-            if candle != self.candles[-1]:
+            created_at = (candle["created_at"] != self.candles[-1]["created_at"])
+         
+            if created_at:
                 self.candles.append(candle)
                 self.candles.pop(0)
+                print(self.candles[-1])
+
+    def close(self):
+        self.active = False
 
     def getCandles(self):
         self.candles = []
@@ -81,6 +86,16 @@ class getCandles(threading.Thread):
         for candle in candlesBrute[qtd*-1:]:
             yield candle
 if __name__ == "__main__":
-    print(getJson('https://api.binomo.com/candles/v1/Z-CRY%2FIDX/2024-09-08T13:00:00/5?locale=br'))
+    candleOBJ = getCandles(10000)
+    lastCandles = candleOBJ.candles
+    candleOBJ.close()
+    json_string = json.dumps(lastCandles, indent=len(lastCandles))
+    json_string = json_string.replace("\t", "").replace(" ",'')
+    file_name = "itens.json"
+    with open(file_name,"w") as json_file:
+        json_file.write(json_string)
+
+
+
 
     
